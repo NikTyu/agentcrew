@@ -4,6 +4,8 @@
 
 Демо-сценарий: аналитический ассистент вымышленной сети электроники **«ТехноЛавка»**. У него есть база знаний (стратегия, обзор рынка, логистика, маркетинг, политика возвратов) и данные продаж за три квартала 2026 года.
 
+**Репозиторий:** https://github.com/NikTyu/agentcrew
+
 **Стек:** .NET 10, ASP.NET Core Minimal API, [Microsoft.Extensions.AI](https://learn.microsoft.com/dotnet/ai/microsoft-extensions-ai) (`IChatClient`, `AIFunction`), OpenAI .NET SDK, Server-Sent Events, xUnit. Фронтенд на чистом JS, без сборки.
 
 ## Быстрый старт

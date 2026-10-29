@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgentCrew — команда ИИ-агентов</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">◆</span>
+    <div>
+      <div class="title">AgentCrew</div>
+      <div class="subtitle">Мультиагентный аналитик «ТехноЛавки» · .NET 10 + Microsoft.Extensions.AI</div>
+    </div>
+  </div>
+  <div class="provider" id="provider">…</div>
+</header>
+
+<main class="layout">
+  <section class="chat">
+    <div class="messages" id="messages">
+      <div class="welcome" id="welcome">
+        <h2>Спросите команду агентов</h2>
+        <p>Планировщик разобьёт задачу на шаги, исследователь и аналитик выполнят их параллельно с помощью инструментов, редактор соберёт ответ, а критик проверит его и при необходимости вернёт на доработку.</p>
+        <div class="examples" id="examples">
+          <button>Какие товары показали наибольший рост выручки в 3 квартале, почему, и какие рекомендации на 4 квартал?</button>
+          <button>Почему упали продажи в Новосибирске?</button>
+          <button>Какая доля выручки приходится на каждый регион за 2026 год?</button>
+          <button>Какие условия возврата для участников программы лояльности?</button>
+        </div>
+      </div>
+    </div>
+    <form class="composer" id="composer">
+      <textarea id="input" rows="2" placeholder="Например: сравни продажи ноутбуков и планшетов и объясни динамику" required></textarea>
+      <button type="submit" id="send">Отправить</button>
+    </form>
+  </section>
+
+  <aside class="inspector">
+    <nav class="tabs">
+      <button class="tab active" data-tab="plan">План</button>
+      <button class="tab" data-tab="trace">Трасса <span class="count" id="traceCount">0</span></button>
+      <button class="tab" data-tab="metrics">Метрики</button>
+      <button class="tab" data-tab="team">Команда</button>
+    </nav>
+    <div class="panel active" id="panel-plan">
+      <div class="empty">План появится после запуска.</div>
+    </div>
+    <div class="panel" id="panel-trace">
+      <div class="empty">Здесь в реальном времени видно каждое действие агентов: рассуждения, вызовы инструментов и их результаты.</div>
+    </div>
+    <div class="panel" id="panel-metrics">
+      <div class="empty">Метрики прогона: время, обращения к LLM, токены, вызовы инструментов.</div>
+    </div>
+    <div class="panel" id="panel-team"></div>
+  </aside>
+</main>
+
+<script src="markdown.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
